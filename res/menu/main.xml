@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_sync"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="@string/action_sync"/>
+    
+    <item
+        android:id="@+id/action_sync_fb"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="Sync from FB"/>
+    
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="@string/action_add"/>
+    
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="@string/action_settings"/>
+    
+    <item
+        android:id="@+id/action_export_contact"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="Export contact"/>
+
+</menu>

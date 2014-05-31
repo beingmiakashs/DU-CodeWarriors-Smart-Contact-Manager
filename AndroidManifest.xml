@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.du.codewarriorcontact"
+    android:installLocation="auto"
+    android:theme="@android:style/Theme.Holo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+    
+    <permission
+        android:name="in.wptrafficanalyzer.locationremovesinglemarker.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="in.wptrafficanalyzer.locationremovesinglemarker.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+ 	<uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+ 
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.du.codewarriorcontact.MainSplashScreen"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.du.codewarriorcontact.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.du.codewarriorcontact.ContactDetails"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.map.SavePlaceMapAcrivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.ContactsForm"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!-- Settings -->
+        <activity
+            android:name="com.du.codewarriorcontact.settings.SettingPage"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.settings.NearPlaceSetting"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.settings.SynchronizeContactSetting"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.settings.WishFriendSetting"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.settings.EmergencyShakeSetting"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.FrontEmergencyActivity"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        
+        <!-- Social -->
+        
+        <activity
+            android:name="com.du.codewarriorcontact.social.FacebookController"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.social.PostToFacebook"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.du.codewarriorcontact.adapter.MessageDetails"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!-- All service  -->
+        <service android:name="com.du.codewarriorcontact.service.NearMeService" />
+        <service android:name="com.du.codewarriorcontact.service.SynchronizeContactService" />
+        <service android:name="com.du.codewarriorcontact.service.WishFriendService" />
+        <service android:name="com.du.codewarriorcontact.settings.StepService"
+                         android:enabled="true" 
+                         android:exported="true">
+        </service>
+        
+        <receiver
+            android:name=".StartAtBootServiceReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+
+                <category android:name="android.intent.category.HOME" >
+                </category>
+            </intent-filter>
+        </receiver>
+        
+        <receiver
+            android:name="com.du.codewarriorcontact.BlockCallReceiver"
+            android:enabled="true" >
+            <intent-filter android:priority="100" >
+                <action android:name="android.intent.action.PHONE_STATE" >
+                </action>
+            </intent-filter>
+        </receiver>
+        
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    
+    	<meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBuC9-QXHD6g40KZxs5JXRttfI4Httxuew" />
+        
+    </application>
+
+</manifest>
